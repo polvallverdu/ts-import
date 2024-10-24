@@ -24,10 +24,9 @@
         "tslib": "2.5.0"
     },
     "devDependencies": {
-        "@radrat/cli": "3.0.0-beta.9",
         "@types/node": "18.15.11",
-        "ava": "5.2.0",
-        "typescript": "5.0.4"
+        "typescript": "5.0.4",
+        "vitest": "^0.0.118"
     },
     "peerDependencies": {
         "typescript": "5"
@@ -35,16 +34,9 @@
     "engines": {
         "node": ">=18"
     },
-    "ava": {
-        "extensions": {
-            "ts": "module"
-        },
-        "files": [
-            "tests/**/*",
-            "!tests/assets"
-        ],
-        "nodeArguments": [
-            "--loader=ts-node/esm"
-        ]
+    "scripts": {
+        "build": "pnpm exec tsc",
+        "test": "pnpm exec vitest",
+        "test:watch": "pnpm exec vitest --watch"
     }
 }
