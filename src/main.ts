@@ -2,6 +2,7 @@ import * as commentParser from './modules/comment-parser/index.js';
 import * as crossPlatform from './modules/cross-platform/index.js';
 import * as path from 'node:path';
 import * as utils from './utils/index.js';
+import fs from 'fs/promises';
 
 import { LoadMode, LoadOptions } from './load.interfaces.js';
 
@@ -52,6 +53,10 @@ export const load = async (tsRelativePath: string, options?: LoadOptions) => {
         jsPath,
         ...config,
     });
+
+    if (!loadConfig.useCache) {
+        await fs.rm(cacheDir, { recursive: true, force: true });
+    }
 
     const loaded = await import(jsPath);
     return loaded;

@@ -20,7 +20,7 @@
     "type": "module",
     "dependencies": {
         "comment-parser": "1.3.1",
-        "options-defaults": "workspace:2.0.40",
+        "options-defaults": "2.0.40",
         "tslib": "2.5.0"
     },
     "devDependencies": {
