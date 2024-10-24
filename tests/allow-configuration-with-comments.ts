@@ -3,7 +3,7 @@ import * as tsImport from '../src/main.js';
 
 import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import test from 'ava';
+import { test } from 'vitest';
 
 const filePath = fileURLToPath(import.meta.url);
 const directoryPath = dirname(filePath);
